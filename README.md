@@ -5,7 +5,7 @@ Python API for accessing ForecastApp (http://www.forecastapp.com).
 ```
 from pyforecastapp import ForecastApp
 
-api = ForecastApp('<client-id>','<auth-token>')
+api = ForecastApp('<account-id>','<email>', '<password>')
 for p in api.clients():
     print p
 ```
