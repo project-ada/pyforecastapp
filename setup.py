@@ -13,7 +13,7 @@ def get_install_requirements(path):
 
 setup(
     name='pyforecastapp',
-    version='1.0.0',
+    version='1.0.1',
     description='Python API for ForecastApp.com',
     long_description='Python API for ForecastApp.com. See http://github.com/project-ada/pyforecastapp',
     url='http://github.com/project-ada/pyforecastapp',
