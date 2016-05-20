@@ -3,7 +3,6 @@ import inspect
 from setuptools import find_packages, setup
 
 root = os.path.dirname(os.path.realpath(__file__))
-long_description = open(os.path.join(root, 'README.md')).read()
 
 __location__ = os.path.join(os.getcwd(), os.path.dirname(
     inspect.getfile(inspect.currentframe())))
@@ -16,7 +15,7 @@ setup(
     name='pyforecastapp',
     version='1.0.0',
     description='Python API for ForecastApp.com',
-    long_description=long_description,
+    long_description='Python API for ForecastApp.com. See http://github.com/project-ada/pyforecastapp',
     url='http://github.com/project-ada/pyforecastapp',
     author='Miiro Juuso',
     author_email='miiro.juuso@artirix.com',
