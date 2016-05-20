@@ -1,6 +1,11 @@
 # PyForecastApp
 Python API for accessing ForecastApp (http://www.forecastapp.com).
 
+## Installation
+```
+pip install pyforecastapp
+```
+
 ## Usage
 ```
 from pyforecastapp import ForecastApp
