@@ -42,7 +42,7 @@ class ForecastApp(object):
                 form_request = s.get('https://id.getharvest.com/forecast/sign_in')
                 csrf_token = re.search('name="authenticity_token" value="(.*)"', form_request.text).group(1)
             except:
-                print "Error authenticating, could not find csrf token"
+                print("Error authenticating, could not find csrf token")
                 raise
 
             data = {'authenticity_token': csrf_token,
@@ -55,5 +55,5 @@ class ForecastApp(object):
                 token_request = s.get('https://id.getharvest.com/accounts/%s' % account_id)
                 return token_request.url.split('/')[-1]
             except:
-                print "Error authenticating, could not find authentication token"
+                print("Error authenticating, could not find authentication token")
                 raise
