@@ -1,3 +1,4 @@
+from __future__ import print_function
 import requests
 import re
 
@@ -8,7 +9,7 @@ class ForecastApp(object):
         self.protocol = protocol
         self.host = host
         self.account_id = account_id
-        
+
         self.auth_token = self._authenticate(email, password, account_id)
 
     def projects(self):
