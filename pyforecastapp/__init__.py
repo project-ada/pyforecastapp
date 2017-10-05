@@ -2,6 +2,10 @@ import re
 import requests
 
 
+class ForecastAppException(Exception):
+    pass
+
+
 class ForecastApp(object):
     """
     Supports both standard and Personal Access Token methods of authication
@@ -30,10 +34,10 @@ class ForecastApp(object):
             return
 
         # try to look up the user's token.  To do this we must have their email and password
-        if not any(email, password):
+        if not any([email, password]):
             raise ForecastAppException('Both password and email are required to fetch an auth token')
 
-        self.auth_token = self.get_token(email, password, account_id)
+        self.auth_token = self._get_token(email, password, account_id)
 
     def projects(self):
         return self._call('/projects')['projects']
