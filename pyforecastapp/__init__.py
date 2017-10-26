@@ -22,8 +22,8 @@ class ForecastApp(object):
     After authentication, usage is the same
     """
 
-    def __init__(self, account_id, email=None, password=None, auth_token=None, protocol="https",
-            host="api.forecastapp.com"):
+    def __init__(self, account_id, email=None, password=None, auth_token=None,
+                 protocol='https', host='api.forecastapp.com'):
         self.protocol = protocol
         self.host = host
         self.account_id = account_id
@@ -34,7 +34,7 @@ class ForecastApp(object):
             return
 
         # try to look up the user's token.  To do this we must have their email and password
-        if not any([email, password]):
+        if not any((email, password)):
             raise ForecastAppException('Both password and email are required to fetch an auth token')
 
         self.auth_token = self._get_token(email, password, account_id)
@@ -75,7 +75,7 @@ class ForecastApp(object):
                 form_request = s.get('https://id.getharvest.com/forecast/sign_in')
                 csrf_token = re.search('name="authenticity_token" value="(.*)"', form_request.text).group(1)
             except:
-                raise ForecastAppException("Error authenticating, could not find csrf token")
+                raise ForecastAppException('Error authenticating, could not find csrf token')
 
             data = {
                 'authenticity_token': csrf_token,
@@ -89,4 +89,4 @@ class ForecastApp(object):
                 token_request = s.get('https://id.getharvest.com/accounts/%s' % account_id)
                 return token_request.url.split('/')[-1]
             except:
-                raise ForecastAppException("Error authenticating, could not find authentication token")
+                raise ForecastAppException('Error authenticating, could not find authentication token')
