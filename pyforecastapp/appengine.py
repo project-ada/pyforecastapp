@@ -1,8 +1,7 @@
-import json
-
-from google.appengine.api import urlfetch
-
+from __future__ import unicode_literals
 from . import ForecastApp
+import json
+from google.appengine.api import urlfetch
 
 
 class ForecastAppAppengine(ForecastApp):
@@ -25,7 +24,7 @@ class ForecastAppAppengine(ForecastApp):
         response = urlfetch.fetch(
             url,
             headers={
-                'Forecast-Account-ID': unicode(self.account_id),
+                'Forecast-Account-ID': str(self.account_id),
                 'Authorization': 'Bearer {}'.format(self.auth_token),
             }
         )

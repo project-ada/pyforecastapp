@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import re
 import requests
 
@@ -63,7 +64,7 @@ class ForecastApp(object):
         response = requests.get(
             url,
             headers={
-                'Forecast-Account-ID': unicode(self.account_id),
+                'Forecast-Account-ID': str(self.account_id),
                 'Authorization': 'Bearer {}'.format(self.auth_token),
             }
         )
