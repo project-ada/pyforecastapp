@@ -46,6 +46,9 @@ class ForecastApp(object):
     def people(self):
         return self._call('/people')['people']
 
+    def roles(self):
+        return self._call('/roles')['roles']
+
     def clients(self):
         return self._call('/clients')['clients']
 
